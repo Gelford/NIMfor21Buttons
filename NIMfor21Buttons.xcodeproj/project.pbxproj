@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A1CB4F116B866C40012C9EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1CB4F016B866C40012C9EA /* UIKit.framework */; };
+		2A1CB4F316B866C40012C9EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1CB4F216B866C40012C9EA /* Foundation.framework */; };
+		2A1CB4F516B866C40012C9EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1CB4F416B866C40012C9EA /* CoreGraphics.framework */; };
+		2A1CB4FB16B866C40012C9EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A1CB4F916B866C40012C9EA /* InfoPlist.strings */; };
+		2A1CB4FD16B866C40012C9EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1CB4FC16B866C40012C9EA /* main.m */; };
+		2A1CB50116B866C40012C9EA /* NIMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1CB50016B866C40012C9EA /* NIMAppDelegate.m */; };
+		2A1CB50316B866C40012C9EA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A1CB50216B866C40012C9EA /* Default.png */; };
+		2A1CB50516B866C40012C9EA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A1CB50416B866C40012C9EA /* Default@2x.png */; };
+		2A1CB50716B866C40012C9EA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A1CB50616B866C40012C9EA /* Default-568h@2x.png */; };
+		2A1CB50A16B866C40012C9EA /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1CB50816B866C40012C9EA /* MainStoryboard_iPhone.storyboard */; };
+		2A1CB50D16B866C40012C9EA /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1CB50B16B866C40012C9EA /* MainStoryboard_iPad.storyboard */; };
+		2A1CB51016B866C40012C9EA /* NIMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1CB50F16B866C40012C9EA /* NIMViewController.m */; };
+		2A1CB51816B866C40012C9EA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1CB51716B866C40012C9EA /* SenTestingKit.framework */; };
+		2A1CB51916B866C40012C9EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1CB4F016B866C40012C9EA /* UIKit.framework */; };
+		2A1CB51A16B866C40012C9EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1CB4F216B866C40012C9EA /* Foundation.framework */; };
+		2A1CB52216B866C40012C9EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A1CB52016B866C40012C9EA /* InfoPlist.strings */; };
+		2A1CB52516B866C40012C9EA /* NIMfor21ButtonsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1CB52416B866C40012C9EA /* NIMfor21ButtonsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A1CB51B16B866C40012C9EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A1CB4E516B866C40012C9EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A1CB4EC16B866C40012C9EA;
+			remoteInfo = NIMfor21Buttons;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2A1CB4ED16B866C40012C9EA /* NIMfor21Buttons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NIMfor21Buttons.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A1CB4F016B866C40012C9EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2A1CB4F216B866C40012C9EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2A1CB4F416B866C40012C9EA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2A1CB4F816B866C40012C9EA /* NIMfor21Buttons-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NIMfor21Buttons-Info.plist"; sourceTree = "<group>"; };
+		2A1CB4FA16B866C40012C9EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2A1CB4FC16B866C40012C9EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A1CB4FE16B866C40012C9EA /* NIMfor21Buttons-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NIMfor21Buttons-Prefix.pch"; sourceTree = "<group>"; };
+		2A1CB4FF16B866C40012C9EA /* NIMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIMAppDelegate.h; sourceTree = "<group>"; };
+		2A1CB50016B866C40012C9EA /* NIMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIMAppDelegate.m; sourceTree = "<group>"; };
+		2A1CB50216B866C40012C9EA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2A1CB50416B866C40012C9EA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2A1CB50616B866C40012C9EA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2A1CB50916B866C40012C9EA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		2A1CB50C16B866C40012C9EA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		2A1CB50E16B866C40012C9EA /* NIMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIMViewController.h; sourceTree = "<group>"; };
+		2A1CB50F16B866C40012C9EA /* NIMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIMViewController.m; sourceTree = "<group>"; };
+		2A1CB51616B866C40012C9EA /* NIMfor21ButtonsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NIMfor21ButtonsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A1CB51716B866C40012C9EA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2A1CB51F16B866C40012C9EA /* NIMfor21ButtonsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NIMfor21ButtonsTests-Info.plist"; sourceTree = "<group>"; };
+		2A1CB52116B866C40012C9EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2A1CB52316B866C40012C9EA /* NIMfor21ButtonsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIMfor21ButtonsTests.h; sourceTree = "<group>"; };
+		2A1CB52416B866C40012C9EA /* NIMfor21ButtonsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIMfor21ButtonsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A1CB4EA16B866C40012C9EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A1CB4F116B866C40012C9EA /* UIKit.framework in Frameworks */,
+				2A1CB4F316B866C40012C9EA /* Foundation.framework in Frameworks */,
+				2A1CB4F516B866C40012C9EA /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A1CB51216B866C40012C9EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A1CB51816B866C40012C9EA /* SenTestingKit.framework in Frameworks */,
+				2A1CB51916B866C40012C9EA /* UIKit.framework in Frameworks */,
+				2A1CB51A16B866C40012C9EA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A1CB4E416B866C40012C9EA = {
+			isa = PBXGroup;
+			children = (
+				2A1CB4F616B866C40012C9EA /* NIMfor21Buttons */,
+				2A1CB51D16B866C40012C9EA /* NIMfor21ButtonsTests */,
+				2A1CB4EF16B866C40012C9EA /* Frameworks */,
+				2A1CB4EE16B866C40012C9EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A1CB4EE16B866C40012C9EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A1CB4ED16B866C40012C9EA /* NIMfor21Buttons.app */,
+				2A1CB51616B866C40012C9EA /* NIMfor21ButtonsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A1CB4EF16B866C40012C9EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A1CB4F016B866C40012C9EA /* UIKit.framework */,
+				2A1CB4F216B866C40012C9EA /* Foundation.framework */,
+				2A1CB4F416B866C40012C9EA /* CoreGraphics.framework */,
+				2A1CB51716B866C40012C9EA /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A1CB4F616B866C40012C9EA /* NIMfor21Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				2A1CB4FF16B866C40012C9EA /* NIMAppDelegate.h */,
+				2A1CB50016B866C40012C9EA /* NIMAppDelegate.m */,
+				2A1CB50816B866C40012C9EA /* MainStoryboard_iPhone.storyboard */,
+				2A1CB50B16B866C40012C9EA /* MainStoryboard_iPad.storyboard */,
+				2A1CB50E16B866C40012C9EA /* NIMViewController.h */,
+				2A1CB50F16B866C40012C9EA /* NIMViewController.m */,
+				2A1CB4F716B866C40012C9EA /* Supporting Files */,
+			);
+			path = NIMfor21Buttons;
+			sourceTree = "<group>";
+		};
+		2A1CB4F716B866C40012C9EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2A1CB4F816B866C40012C9EA /* NIMfor21Buttons-Info.plist */,
+				2A1CB4F916B866C40012C9EA /* InfoPlist.strings */,
+				2A1CB4FC16B866C40012C9EA /* main.m */,
+				2A1CB4FE16B866C40012C9EA /* NIMfor21Buttons-Prefix.pch */,
+				2A1CB50216B866C40012C9EA /* Default.png */,
+				2A1CB50416B866C40012C9EA /* Default@2x.png */,
+				2A1CB50616B866C40012C9EA /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2A1CB51D16B866C40012C9EA /* NIMfor21ButtonsTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A1CB52316B866C40012C9EA /* NIMfor21ButtonsTests.h */,
+				2A1CB52416B866C40012C9EA /* NIMfor21ButtonsTests.m */,
+				2A1CB51E16B866C40012C9EA /* Supporting Files */,
+			);
+			path = NIMfor21ButtonsTests;
+			sourceTree = "<group>";
+		};
+		2A1CB51E16B866C40012C9EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2A1CB51F16B866C40012C9EA /* NIMfor21ButtonsTests-Info.plist */,
+				2A1CB52016B866C40012C9EA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A1CB4EC16B866C40012C9EA /* NIMfor21Buttons */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A1CB52816B866C40012C9EA /* Build configuration list for PBXNativeTarget "NIMfor21Buttons" */;
+			buildPhases = (
+				2A1CB4E916B866C40012C9EA /* Sources */,
+				2A1CB4EA16B866C40012C9EA /* Frameworks */,
+				2A1CB4EB16B866C40012C9EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NIMfor21Buttons;
+			productName = NIMfor21Buttons;
+			productReference = 2A1CB4ED16B866C40012C9EA /* NIMfor21Buttons.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A1CB51516B866C40012C9EA /* NIMfor21ButtonsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A1CB52B16B866C40012C9EA /* Build configuration list for PBXNativeTarget "NIMfor21ButtonsTests" */;
+			buildPhases = (
+				2A1CB51116B866C40012C9EA /* Sources */,
+				2A1CB51216B866C40012C9EA /* Frameworks */,
+				2A1CB51316B866C40012C9EA /* Resources */,
+				2A1CB51416B866C40012C9EA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A1CB51C16B866C40012C9EA /* PBXTargetDependency */,
+			);
+			name = NIMfor21ButtonsTests;
+			productName = NIMfor21ButtonsTests;
+			productReference = 2A1CB51616B866C40012C9EA /* NIMfor21ButtonsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A1CB4E516B866C40012C9EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NIM;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Xin Gao";
+			};
+			buildConfigurationList = 2A1CB4E816B866C40012C9EA /* Build configuration list for PBXProject "NIMfor21Buttons" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2A1CB4E416B866C40012C9EA;
+			productRefGroup = 2A1CB4EE16B866C40012C9EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A1CB4EC16B866C40012C9EA /* NIMfor21Buttons */,
+				2A1CB51516B866C40012C9EA /* NIMfor21ButtonsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A1CB4EB16B866C40012C9EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A1CB4FB16B866C40012C9EA /* InfoPlist.strings in Resources */,
+				2A1CB50316B866C40012C9EA /* Default.png in Resources */,
+				2A1CB50516B866C40012C9EA /* Default@2x.png in Resources */,
+				2A1CB50716B866C40012C9EA /* Default-568h@2x.png in Resources */,
+				2A1CB50A16B866C40012C9EA /* MainStoryboard_iPhone.storyboard in Resources */,
+				2A1CB50D16B866C40012C9EA /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A1CB51316B866C40012C9EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A1CB52216B866C40012C9EA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A1CB51416B866C40012C9EA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A1CB4E916B866C40012C9EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A1CB4FD16B866C40012C9EA /* main.m in Sources */,
+				2A1CB50116B866C40012C9EA /* NIMAppDelegate.m in Sources */,
+				2A1CB51016B866C40012C9EA /* NIMViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A1CB51116B866C40012C9EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A1CB52516B866C40012C9EA /* NIMfor21ButtonsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A1CB51C16B866C40012C9EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A1CB4EC16B866C40012C9EA /* NIMfor21Buttons */;
+			targetProxy = 2A1CB51B16B866C40012C9EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2A1CB4F916B866C40012C9EA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A1CB4FA16B866C40012C9EA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2A1CB50816B866C40012C9EA /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A1CB50916B866C40012C9EA /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		2A1CB50B16B866C40012C9EA /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A1CB50C16B866C40012C9EA /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		2A1CB52016B866C40012C9EA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A1CB52116B866C40012C9EA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A1CB52616B866C40012C9EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A1CB52716B866C40012C9EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A1CB52916B866C40012C9EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NIMfor21Buttons/NIMfor21Buttons-Prefix.pch";
+				INFOPLIST_FILE = "NIMfor21Buttons/NIMfor21Buttons-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2A1CB52A16B866C40012C9EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NIMfor21Buttons/NIMfor21Buttons-Prefix.pch";
+				INFOPLIST_FILE = "NIMfor21Buttons/NIMfor21Buttons-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2A1CB52C16B866C40012C9EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NIMfor21Buttons.app/NIMfor21Buttons";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NIMfor21Buttons/NIMfor21Buttons-Prefix.pch";
+				INFOPLIST_FILE = "NIMfor21ButtonsTests/NIMfor21ButtonsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2A1CB52D16B866C40012C9EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NIMfor21Buttons.app/NIMfor21Buttons";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NIMfor21Buttons/NIMfor21Buttons-Prefix.pch";
+				INFOPLIST_FILE = "NIMfor21ButtonsTests/NIMfor21ButtonsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A1CB4E816B866C40012C9EA /* Build configuration list for PBXProject "NIMfor21Buttons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A1CB52616B866C40012C9EA /* Debug */,
+				2A1CB52716B866C40012C9EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A1CB52816B866C40012C9EA /* Build configuration list for PBXNativeTarget "NIMfor21Buttons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A1CB52916B866C40012C9EA /* Debug */,
+				2A1CB52A16B866C40012C9EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2A1CB52B16B866C40012C9EA /* Build configuration list for PBXNativeTarget "NIMfor21ButtonsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A1CB52C16B866C40012C9EA /* Debug */,
+				2A1CB52D16B866C40012C9EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A1CB4E516B866C40012C9EA /* Project object */;
+}
