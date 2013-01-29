@@ -24,6 +24,8 @@
 		2A1CB51A16B866C40012C9EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1CB4F216B866C40012C9EA /* Foundation.framework */; };
 		2A1CB52216B866C40012C9EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A1CB52016B866C40012C9EA /* InfoPlist.strings */; };
 		2A1CB52516B866C40012C9EA /* NIMfor21ButtonsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1CB52416B866C40012C9EA /* NIMfor21ButtonsTests.m */; };
+		2A4DDFCD16B87D1400130448 /* NIMGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DDFCB16B87D1400130448 /* NIMGameViewController.m */; };
+		2A4DDFCE16B87D1400130448 /* NIMGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A4DDFCC16B87D1400130448 /* NIMGameViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,9 @@
 		2A1CB52116B866C40012C9EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A1CB52316B866C40012C9EA /* NIMfor21ButtonsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIMfor21ButtonsTests.h; sourceTree = "<group>"; };
 		2A1CB52416B866C40012C9EA /* NIMfor21ButtonsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIMfor21ButtonsTests.m; sourceTree = "<group>"; };
+		2A4DDFCA16B87D1400130448 /* NIMGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMGameViewController.h; sourceTree = "<group>"; };
+		2A4DDFCB16B87D1400130448 /* NIMGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMGameViewController.m; sourceTree = "<group>"; };
+		2A4DDFCC16B87D1400130448 /* NIMGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NIMGameViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,13 +124,15 @@
 		2A1CB4F616B866C40012C9EA /* NIMfor21Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				2A1CB4F716B866C40012C9EA /* Supporting Files */,
+				2A1CB52E16B868370012C9EA /* Storyboard */,
 				2A1CB4FF16B866C40012C9EA /* NIMAppDelegate.h */,
 				2A1CB50016B866C40012C9EA /* NIMAppDelegate.m */,
-				2A1CB50816B866C40012C9EA /* MainStoryboard_iPhone.storyboard */,
-				2A1CB50B16B866C40012C9EA /* MainStoryboard_iPad.storyboard */,
 				2A1CB50E16B866C40012C9EA /* NIMViewController.h */,
 				2A1CB50F16B866C40012C9EA /* NIMViewController.m */,
-				2A1CB4F716B866C40012C9EA /* Supporting Files */,
+				2A4DDFCA16B87D1400130448 /* NIMGameViewController.h */,
+				2A4DDFCB16B87D1400130448 /* NIMGameViewController.m */,
+				2A4DDFCC16B87D1400130448 /* NIMGameViewController.xib */,
 			);
 			path = NIMfor21Buttons;
 			sourceTree = "<group>";
@@ -161,6 +168,15 @@
 				2A1CB52016B866C40012C9EA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2A1CB52E16B868370012C9EA /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				2A1CB50816B866C40012C9EA /* MainStoryboard_iPhone.storyboard */,
+				2A1CB50B16B866C40012C9EA /* MainStoryboard_iPad.storyboard */,
+			);
+			name = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +257,7 @@
 				2A1CB50716B866C40012C9EA /* Default-568h@2x.png in Resources */,
 				2A1CB50A16B866C40012C9EA /* MainStoryboard_iPhone.storyboard in Resources */,
 				2A1CB50D16B866C40012C9EA /* MainStoryboard_iPad.storyboard in Resources */,
+				2A4DDFCE16B87D1400130448 /* NIMGameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +295,7 @@
 				2A1CB4FD16B866C40012C9EA /* main.m in Sources */,
 				2A1CB50116B866C40012C9EA /* NIMAppDelegate.m in Sources */,
 				2A1CB51016B866C40012C9EA /* NIMViewController.m in Sources */,
+				2A4DDFCD16B87D1400130448 /* NIMGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +486,7 @@
 				2A1CB52A16B866C40012C9EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A1CB52B16B866C40012C9EA /* Build configuration list for PBXNativeTarget "NIMfor21ButtonsTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +495,7 @@
 				2A1CB52D16B866C40012C9EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

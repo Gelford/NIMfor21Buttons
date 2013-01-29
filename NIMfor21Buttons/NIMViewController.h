@@ -10,4 +10,8 @@
 
 @interface NIMViewController : UIViewController
 
+- (IBAction)singlePlayerGo:(id)sender;
+- (IBAction)multiplayerGo:(id)sender;
+- (IBAction)showRulesView:(id)sender;
+
 @end
