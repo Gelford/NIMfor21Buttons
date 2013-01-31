@@ -11,5 +11,7 @@
 @interface NIMGameViewController : UIViewController
 
 - (IBAction)pause:(id)sender;
+- (IBAction)confirmAndGo:(id)sender;
+- (void)dismissViewControllerToMenu;
 
 @end

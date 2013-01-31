@@ -168,7 +168,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4Z-sd-EX7">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Y4W-v2-U67"/>
+                                    <constraint firstAttribute="height" constant="64" id="MS6-Ie-tNQ"/>
                                     <constraint firstAttribute="width" constant="240" id="gkn-Sc-0m7"/>
                                 </constraints>
                             </imageView>
@@ -197,10 +197,10 @@ ENJOY!</mutableString>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="jb2-dC-BXh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Qfi-eP-cZ4"/>
                             <constraint firstItem="e66-f7-rmB" firstAttribute="leading" secondItem="y4Z-sd-EX7" secondAttribute="leading" type="default" id="TkF-hY-cnE"/>
+                            <constraint firstItem="e66-f7-rmB" firstAttribute="centerX" secondItem="r8G-sA-Sb8" secondAttribute="centerX" type="default" id="WHl-Ma-cu4"/>
                             <constraint firstItem="e66-f7-rmB" firstAttribute="trailing" secondItem="y4Z-sd-EX7" secondAttribute="trailing" type="default" id="Z1c-L6-gnt"/>
                             <constraint firstItem="y4Z-sd-EX7" firstAttribute="top" secondItem="r8G-sA-Sb8" secondAttribute="top" constant="20" symbolic="YES" type="default" id="mET-Bm-RbV"/>
-                            <constraint firstAttribute="bottom" secondItem="e66-f7-rmB" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="mKl-Gc-lta"/>
-                            <constraint firstItem="e66-f7-rmB" firstAttribute="centerX" secondItem="r8G-sA-Sb8" secondAttribute="centerX" type="default" id="qan-VA-3f8"/>
+                            <constraint firstItem="e66-f7-rmB" firstAttribute="top" secondItem="r8G-sA-Sb8" secondAttribute="top" constant="102" id="mwx-xH-hgy"/>
                             <constraint firstItem="jb2-dC-BXh" firstAttribute="leading" secondItem="r8G-sA-Sb8" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wka-CG-9eD"/>
                         </constraints>
                     </view>

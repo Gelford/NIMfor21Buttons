@@ -35,6 +35,7 @@
 
 #pragma mark-
 #pragma mark Private Methods
+
 - (IBAction)backToMenu:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -43,13 +44,13 @@
 - (IBAction)playWithNormalAI:(id)sender
 {
     NIMGameViewController *gameViewController = [[NIMGameViewController alloc] init];
-    [self presentViewController:gameViewController animated:NO completion:nil];
+    [self.AISelectionViewController presentViewController:gameViewController animated:NO completion:nil];
 }
 
 - (IBAction)playWithCrazyAI:(id)sender
 {
     NIMGameViewController *gameViewController = [[NIMGameViewController alloc] init];
-    [self presentViewController:gameViewController animated:NO completion:nil];
+    [self.AISelectionViewController presentViewController:gameViewController animated:NO completion:nil];
 }
 
 #pragma mark -

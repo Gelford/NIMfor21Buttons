@@ -26,6 +26,9 @@
 		2A1CB52516B866C40012C9EA /* NIMfor21ButtonsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1CB52416B866C40012C9EA /* NIMfor21ButtonsTests.m */; };
 		2A4DDFCD16B87D1400130448 /* NIMGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DDFCB16B87D1400130448 /* NIMGameViewController.m */; };
 		2A4DDFCE16B87D1400130448 /* NIMGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A4DDFCC16B87D1400130448 /* NIMGameViewController.xib */; };
+		2A76A09016B9AE240026CD1C /* NIMAIEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A76A08F16B9AE240026CD1C /* NIMAIEngine.m */; };
+		2A76A09616B9E2D60026CD1C /* NIMGameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A76A09416B9E2D60026CD1C /* NIMGameOverViewController.m */; };
+		2A76A09716B9E2D60026CD1C /* NIMGameOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A76A09516B9E2D60026CD1C /* NIMGameOverViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,11 @@
 		2A4DDFCA16B87D1400130448 /* NIMGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMGameViewController.h; sourceTree = "<group>"; };
 		2A4DDFCB16B87D1400130448 /* NIMGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMGameViewController.m; sourceTree = "<group>"; };
 		2A4DDFCC16B87D1400130448 /* NIMGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NIMGameViewController.xib; sourceTree = "<group>"; };
+		2A76A08E16B9AE240026CD1C /* NIMAIEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMAIEngine.h; sourceTree = "<group>"; };
+		2A76A08F16B9AE240026CD1C /* NIMAIEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMAIEngine.m; sourceTree = "<group>"; };
+		2A76A09316B9E2D60026CD1C /* NIMGameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMGameOverViewController.h; sourceTree = "<group>"; };
+		2A76A09416B9E2D60026CD1C /* NIMGameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMGameOverViewController.m; sourceTree = "<group>"; };
+		2A76A09516B9E2D60026CD1C /* NIMGameOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NIMGameOverViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,15 +132,14 @@
 		2A1CB4F616B866C40012C9EA /* NIMfor21Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				2A76A09216B9B0770026CD1C /* AIEngine */,
+				2A76A09116B9B0660026CD1C /* GameVIew */,
 				2A1CB4F716B866C40012C9EA /* Supporting Files */,
 				2A1CB52E16B868370012C9EA /* Storyboard */,
 				2A1CB4FF16B866C40012C9EA /* NIMAppDelegate.h */,
 				2A1CB50016B866C40012C9EA /* NIMAppDelegate.m */,
 				2A1CB50E16B866C40012C9EA /* NIMViewController.h */,
 				2A1CB50F16B866C40012C9EA /* NIMViewController.m */,
-				2A4DDFCA16B87D1400130448 /* NIMGameViewController.h */,
-				2A4DDFCB16B87D1400130448 /* NIMGameViewController.m */,
-				2A4DDFCC16B87D1400130448 /* NIMGameViewController.xib */,
 			);
 			path = NIMfor21Buttons;
 			sourceTree = "<group>";
@@ -177,6 +184,28 @@
 				2A1CB50B16B866C40012C9EA /* MainStoryboard_iPad.storyboard */,
 			);
 			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		2A76A09116B9B0660026CD1C /* GameVIew */ = {
+			isa = PBXGroup;
+			children = (
+				2A76A09316B9E2D60026CD1C /* NIMGameOverViewController.h */,
+				2A76A09416B9E2D60026CD1C /* NIMGameOverViewController.m */,
+				2A76A09516B9E2D60026CD1C /* NIMGameOverViewController.xib */,
+				2A4DDFCA16B87D1400130448 /* NIMGameViewController.h */,
+				2A4DDFCB16B87D1400130448 /* NIMGameViewController.m */,
+				2A4DDFCC16B87D1400130448 /* NIMGameViewController.xib */,
+			);
+			name = GameVIew;
+			sourceTree = "<group>";
+		};
+		2A76A09216B9B0770026CD1C /* AIEngine */ = {
+			isa = PBXGroup;
+			children = (
+				2A76A08E16B9AE240026CD1C /* NIMAIEngine.h */,
+				2A76A08F16B9AE240026CD1C /* NIMAIEngine.m */,
+			);
+			name = AIEngine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +287,7 @@
 				2A1CB50A16B866C40012C9EA /* MainStoryboard_iPhone.storyboard in Resources */,
 				2A1CB50D16B866C40012C9EA /* MainStoryboard_iPad.storyboard in Resources */,
 				2A4DDFCE16B87D1400130448 /* NIMGameViewController.xib in Resources */,
+				2A76A09716B9E2D60026CD1C /* NIMGameOverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +326,8 @@
 				2A1CB50116B866C40012C9EA /* NIMAppDelegate.m in Sources */,
 				2A1CB51016B866C40012C9EA /* NIMViewController.m in Sources */,
 				2A4DDFCD16B87D1400130448 /* NIMGameViewController.m in Sources */,
+				2A76A09016B9AE240026CD1C /* NIMAIEngine.m in Sources */,
+				2A76A09616B9E2D60026CD1C /* NIMGameOverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
