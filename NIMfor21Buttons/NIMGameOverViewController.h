@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @interface NIMGameOverViewController : UIViewController
 
 @property (weak, nonatomic) id delegate;
+@property (weak, nonatomic) IBOutlet UILabel *winnerLabel;
 
+- (void)setLoser:(NSInteger)loser;
+- (void)createResultMatrixWithBlueArray:(NSMutableArray *)blueArray
+                         andPurpleArray:(NSMutableArray *)purpleArray;
 - (IBAction)backToMenu:(id)sender;
 
 @end

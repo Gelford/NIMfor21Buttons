@@ -15,12 +15,16 @@
 
 #define BLUE_TERM 0
 #define PURPLE_TERM 1
+#define TIME_LIMIT 15
 
 @interface NIMGameViewController ()
 @property (strong, nonatomic) NSMutableArray *gameButtonArray;
 @property (assign, nonatomic) NSInteger currentTerm; // -1:start game or error; 0:Blue; 1:Purple;
 @property (assign, nonatomic) NSInteger positionHaveBeenUsed;
 @property (assign, nonatomic) NSInteger positionCurrentSelected;
+@property (strong, nonatomic) NSTimer *timer;
+@property (assign, nonatomic) NSInteger timeCount;
+@property (assign, nonatomic) BOOL inAnimation;
 // The following array contains NSNumber(Type), which is the position of gameButtonArray
 @property (strong, nonatomic) NSMutableArray *blueGameButtonArray;
 @property (strong, nonatomic) NSMutableArray *purpleGameButtonArray;
@@ -29,11 +33,32 @@
 - (void)changePlayer; // including just start-game settings
 - (void)gameOver; // This is...hmm...Game Over!
 
+// animation methods
+- (void)changePlayerAnimation;
+- (void)timesUpAnimation;
+- (void)gameOverAnimation;
+
 - (IBAction)gameButtonPressed:(id)sender;
 
 @end
 
 @implementation NIMGameViewController
+
+#pragma mark -
+#pragma mark Public Methods
+- (void)dismissViewControllerToMenu
+{
+    self.currentTerm = -1;
+    self.positionCurrentSelected = -1;
+    self.positionHaveBeenUsed = -1;
+    [self.gameButtonArray removeAllObjects];
+    [self.blueGameButtonArray removeAllObjects];
+    [self.purpleGameButtonArray removeAllObjects];
+    self.timeCount = TIME_LIMIT;
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
+    [super dismissViewControllerAnimated:NO completion:nil];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,6 +70,7 @@
         self.positionHaveBeenUsed = -1;
         self.positionCurrentSelected = -1;
         self.currentTerm = -1;
+        self.inAnimation = NO;
         
         self.blueGameButtonArray = [[NSMutableArray alloc] init];
         self.purpleGameButtonArray = [[NSMutableArray alloc] init];
@@ -57,12 +83,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self initGameButtonArray];
-    
-    // start game!
-    // init game field
-    [self changePlayer];
-    // start animation
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,8 +101,6 @@
         UIView *buttonView = [self.view viewWithTag:tag];
         UIButton *gameButton = (UIButton *)buttonView;
         gameButton.enabled = NO;
-        // ______ADD PNG CHANGE HERE_______
-        // ...
         [self.gameButtonArray addObject:gameButton];
     }
 }
@@ -93,11 +111,24 @@
     if (self.currentTerm == -1)
     {
         self.currentTerm = BLUE_TERM;
+        [self.termLabel setText:@"Blue Term"];
     }
     else
     {
-        self.currentTerm = self.currentTerm ? BLUE_TERM : PURPLE_TERM;
+        if (self.currentTerm == BLUE_TERM)
+        {
+            self.currentTerm = PURPLE_TERM;
+            [self.termLabel setText:@"Purple Term"];
+        }
+        else if (self.currentTerm == PURPLE_TERM)
+        {
+            self.currentTerm = BLUE_TERM;
+            [self.termLabel setText:@"Blue Term"];
+        }
     }
+    
+    self.timeCount = TIME_LIMIT;
+    [self.timeLabel setText:[NSString stringWithFormat:@"%ds",self.timeCount]];
     
     // set buttons
     for (UIButton *aButton in self.gameButtonArray)
@@ -116,23 +147,126 @@
     }
     
     // do the animation
+    [self changePlayerAnimation];
 }
 
 - (void)gameOver
 {
     NIMGameOverViewController *gameOverViewController = [[NIMGameOverViewController alloc] init];
     gameOverViewController.delegate = self;
+    [gameOverViewController createResultMatrixWithBlueArray:self.blueGameButtonArray
+                                             andPurpleArray:self.purpleGameButtonArray];
+    [gameOverViewController setLoser:self.currentTerm];
     [self presentViewController:gameOverViewController animated:YES completion:nil];
 }
 
 #pragma mark -
 #pragma mark Animations
 
+- (IBAction)animationDidStop:(id)sender
+{
+    // reset infoLabe position
+    [self.infoLabel setFrame:CGRectMake(320, 200, 311, 80)];
+    
+    self.infoPanel.hidden = YES;
+    
+    self.inAnimation = NO;
+    
+    if (self.timeCount == 0)
+    {
+        self.positionCurrentSelected = self.positionHaveBeenUsed+1;
+        [self gameButtonPressed:[self.gameButtonArray objectAtIndex:self.positionCurrentSelected]];
+        [self confirmAndGo:nil];
+    }
+    if (self.positionHaveBeenUsed == 20)
+    {
+        [self gameOver];
+    }
+}
+
+- (IBAction)animationPart2:(id)sender
+{
+    [UIView beginAnimations:nil context:UIGraphicsGetCurrentContext()];
+    [UIView setAnimationDuration:1];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDidStopSelector:@selector(animationDidStop:)];
+    [self.infoLabel setFrame:CGRectMake(-320, 200, 311, 80)];
+    [UIView commitAnimations];
+}
+
+- (IBAction)animationPart1:(id)sender
+{
+    self.infoPanel.hidden = NO;
+    self.inAnimation = YES;
+    
+    [UIView beginAnimations:nil context:UIGraphicsGetCurrentContext()];
+    [UIView setAnimationDuration:1];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    [UIView setAnimationDidStopSelector:@selector(animationPart2:)];
+    [self.infoLabel setFrame:CGRectMake(5, 200, 311, 80)];
+    [UIView commitAnimations];
+}
+
+- (void)changePlayerAnimation
+{
+    
+    if (self.currentTerm == BLUE_TERM)
+    {
+        [self.infoLabel setText:@"Blue Term"];
+    }
+    else if (self.currentTerm == PURPLE_TERM)
+    {
+        [self.infoLabel setText:@"Purple Term"];
+    }
+    
+    [self animationPart1:nil];
+}
+
+- (void)timesUpAnimation
+{
+    [self.infoLabel setText:@"Time's Up"];
+    [self animationPart1:nil];
+}
+
+- (void)gameOverAnimation
+{
+    [self.infoLabel setText:@"Game Over"];
+    [self animationPart1:nil];
+}
+
+#pragma mark -
+#pragma mark Handle Timer
+
+- (void) handleTimer: (NSTimer *) timer
+{
+    if (self.inAnimation)
+    {
+        return;
+    }
+    self.timeCount--;
+    if (self.timeCount <= 0)
+    {
+        [self timesUpAnimation];
+    }
+    [self.timeLabel setText:[NSString stringWithFormat:@"%ds",self.timeCount]];
+}
 
 #pragma mark -
 #pragma mark Button Actions
 
 - (IBAction)pause:(id)sender
+{
+    [self.view addSubview:self.pausePanel];
+}
+
+- (IBAction)backToGame:(id)sender
+{
+    [self.pausePanel removeFromSuperview];
+}
+
+- (IBAction)backToMenu:(id)sender
 {
     [super dismissViewControllerAnimated:YES completion:nil];
 }
@@ -169,15 +303,32 @@
     self.positionHaveBeenUsed = self.positionCurrentSelected;
     self.positionCurrentSelected = -1;
     
+    [self.countLabel setText:[NSString stringWithFormat:@"%d/21",(self.positionHaveBeenUsed+1)]];
+    
     // Whether game is over
     if (self.positionHaveBeenUsed == 20) // from 0..20, so there are 21 buttons have been pushed
     {
-        [self gameOver];
+        [self gameOverAnimation];
+        return;
     }
-    
+        
     // change player
     [self changePlayer];
+}
+
+- (IBAction)gameStart:(id)sender
+{
+    // init timer
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(handleTimer:) userInfo:nil repeats:YES];
+    self.timeCount = TIME_LIMIT;
     
+    // hide the info panel
+    self.infoPanel.hidden = YES;
+    self.gameStartButton.hidden = YES;
+    self.gameStartButton.enabled = NO;
+    
+    // init game field
+    [self changePlayer];
 }
 
 - (IBAction)gameButtonPressed:(id)sender
@@ -185,22 +336,56 @@
     UIButton *theButton = (UIButton *)sender;
     // set button selected image HERE
     // ...
+    NSString *imageNameString = [NSString stringWithFormat:@""];
+    if (self.currentTerm == BLUE_TERM)
+    {
+        imageNameString = @"blue_select.png";
+    }
+    else if (self.currentTerm == PURPLE_TERM)
+    {
+        imageNameString = @"purple_select.png";
+    }
+    if ([imageNameString isEqualToString:@""])
+    {
+        NSLog(@"Error: Image Name Initialization Failed! Please check currentTerm value.");
+        return;
+    }
+    
+    [theButton setBackgroundImage:[UIImage imageNamed:imageNameString] forState:UIControlStateNormal];
     
     self.positionCurrentSelected = [self.gameButtonArray indexOfObject:theButton];
-    for (int i = self.positionCurrentSelected -1; i > self.positionHaveBeenUsed; i--)
+    for (int offset = 1; offset < 4; offset++)
     {
-        //UIButton *aButton = [self.gameButtonArray objectAtIndex:i];
+        int index = self.positionHaveBeenUsed + offset;
+        if (index >= 21)
+        {
+            break;
+        }
+        UIButton *aButton = [self.gameButtonArray objectAtIndex:index];
         // set button selected image HERE
         // ...
+        if (index > self.positionCurrentSelected)
+        {
+            NSString *resetImageNameString = [NSString string];
+            resetImageNameString = index==20 ? @"red_circle.png" : @"org_circle.png";
+            [aButton setBackgroundImage:[UIImage imageNamed:resetImageNameString] forState:UIControlStateNormal];
+        }
+        else
+        {
+            if (index == 20)
+            {
+                if (self.currentTerm == BLUE_TERM)
+                {
+                    imageNameString = @"red_blue_select.png";
+                }
+                else if (self.currentTerm == PURPLE_TERM)
+                {
+                    imageNameString = @"red_purple_select.png";
+                }
+            }
+            [aButton setBackgroundImage:[UIImage imageNamed:imageNameString] forState:UIControlStateNormal];
+        }
     }
-}
-
-#pragma mark -
-#pragma mark Public Methods
-- (void)dismissViewControllerToMenu
-{
-    [self dismissViewControllerAnimated:NO completion:nil];
-    [super dismissViewControllerAnimated:NO completion:nil];
 }
 
 @end

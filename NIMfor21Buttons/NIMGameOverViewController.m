@@ -9,6 +9,9 @@
 #import "NIMGameOverViewController.h"
 #import "NIMGameViewController.h"
 
+#define BLUE_LOSE 0
+#define PURPLE_LOSE 1
+
 @interface NIMGameOverViewController ()
 
 @end
@@ -38,10 +41,43 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -
+#pragma mark Public Method
+
 - (IBAction)backToMenu:(id)sender
 {
     NIMGameViewController *vc = (NIMGameViewController *)delegate;
     [vc dismissViewControllerToMenu];
+}
+
+- (void)setLoser:(NSInteger)loser
+{
+    if (loser == BLUE_LOSE)
+    {
+        [self.winnerLabel setText:@"Purple Wins!"];
+    }
+    else if (loser == PURPLE_LOSE)
+    {
+        [self.winnerLabel setText:@"Blue Wins!"];
+    }
+}
+
+- (void)createResultMatrixWithBlueArray:(NSMutableArray *)blueArray
+                         andPurpleArray:(NSMutableArray *)purpleArray
+{
+    for (int tag = 500; tag < 521; tag++)
+    {
+        UIView *aView = [self.view viewWithTag:tag];
+        UIImageView *imageView = (UIImageView *)aView;
+        if ([blueArray containsObject:[NSNumber numberWithInt:(tag - 500)]])
+        {
+            [imageView setImage:[UIImage imageNamed:@"blue_circle.png"]];
+        }
+        else if ([purpleArray containsObject:[NSNumber numberWithInt:(tag - 500)]])
+        {
+            [imageView setImage:[UIImage imageNamed:@"purple_circle.png"]];
+        }
+    }
 }
 
 @end

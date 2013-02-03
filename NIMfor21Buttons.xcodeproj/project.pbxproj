@@ -24,6 +24,14 @@
 		2A1CB51A16B866C40012C9EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1CB4F216B866C40012C9EA /* Foundation.framework */; };
 		2A1CB52216B866C40012C9EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A1CB52016B866C40012C9EA /* InfoPlist.strings */; };
 		2A1CB52516B866C40012C9EA /* NIMfor21ButtonsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1CB52416B866C40012C9EA /* NIMfor21ButtonsTests.m */; };
+		2A1DF95116BE476D00173537 /* red_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A1DF95016BE476D00173537 /* red_circle.png */; };
+		2A1DF95416BE5B4500173537 /* red_blue_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A1DF95216BE5B4500173537 /* red_blue_select.png */; };
+		2A1DF95516BE5B4500173537 /* red_purple_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A1DF95316BE5B4500173537 /* red_purple_select.png */; };
+		2A21452616BE3FB700F2AB11 /* org_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A21452116BE3FB700F2AB11 /* org_circle.png */; };
+		2A21452716BE3FB700F2AB11 /* blue_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A21452216BE3FB700F2AB11 /* blue_circle.png */; };
+		2A21452816BE3FB700F2AB11 /* purple_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A21452316BE3FB700F2AB11 /* purple_circle.png */; };
+		2A21452916BE3FB700F2AB11 /* purple_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A21452416BE3FB700F2AB11 /* purple_select.png */; };
+		2A21452A16BE3FB700F2AB11 /* blue_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A21452516BE3FB700F2AB11 /* blue_select.png */; };
 		2A4DDFCD16B87D1400130448 /* NIMGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4DDFCB16B87D1400130448 /* NIMGameViewController.m */; };
 		2A4DDFCE16B87D1400130448 /* NIMGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A4DDFCC16B87D1400130448 /* NIMGameViewController.xib */; };
 		2A76A09016B9AE240026CD1C /* NIMAIEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A76A08F16B9AE240026CD1C /* NIMAIEngine.m */; };
@@ -65,6 +73,14 @@
 		2A1CB52116B866C40012C9EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A1CB52316B866C40012C9EA /* NIMfor21ButtonsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIMfor21ButtonsTests.h; sourceTree = "<group>"; };
 		2A1CB52416B866C40012C9EA /* NIMfor21ButtonsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIMfor21ButtonsTests.m; sourceTree = "<group>"; };
+		2A1DF95016BE476D00173537 /* red_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_circle.png; sourceTree = "<group>"; };
+		2A1DF95216BE5B4500173537 /* red_blue_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_blue_select.png; sourceTree = "<group>"; };
+		2A1DF95316BE5B4500173537 /* red_purple_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_purple_select.png; sourceTree = "<group>"; };
+		2A21452116BE3FB700F2AB11 /* org_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = org_circle.png; sourceTree = "<group>"; };
+		2A21452216BE3FB700F2AB11 /* blue_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_circle.png; sourceTree = "<group>"; };
+		2A21452316BE3FB700F2AB11 /* purple_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple_circle.png; sourceTree = "<group>"; };
+		2A21452416BE3FB700F2AB11 /* purple_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purple_select.png; sourceTree = "<group>"; };
+		2A21452516BE3FB700F2AB11 /* blue_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_select.png; sourceTree = "<group>"; };
 		2A4DDFCA16B87D1400130448 /* NIMGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMGameViewController.h; sourceTree = "<group>"; };
 		2A4DDFCB16B87D1400130448 /* NIMGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMGameViewController.m; sourceTree = "<group>"; };
 		2A4DDFCC16B87D1400130448 /* NIMGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NIMGameViewController.xib; sourceTree = "<group>"; };
@@ -147,6 +163,7 @@
 		2A1CB4F716B866C40012C9EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2A21452016BE3F8100F2AB11 /* Button PNGs */,
 				2A1CB4F816B866C40012C9EA /* NIMfor21Buttons-Info.plist */,
 				2A1CB4F916B866C40012C9EA /* InfoPlist.strings */,
 				2A1CB4FC16B866C40012C9EA /* main.m */,
@@ -184,6 +201,21 @@
 				2A1CB50B16B866C40012C9EA /* MainStoryboard_iPad.storyboard */,
 			);
 			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		2A21452016BE3F8100F2AB11 /* Button PNGs */ = {
+			isa = PBXGroup;
+			children = (
+				2A21452116BE3FB700F2AB11 /* org_circle.png */,
+				2A21452216BE3FB700F2AB11 /* blue_circle.png */,
+				2A21452316BE3FB700F2AB11 /* purple_circle.png */,
+				2A21452416BE3FB700F2AB11 /* purple_select.png */,
+				2A21452516BE3FB700F2AB11 /* blue_select.png */,
+				2A1DF95016BE476D00173537 /* red_circle.png */,
+				2A1DF95216BE5B4500173537 /* red_blue_select.png */,
+				2A1DF95316BE5B4500173537 /* red_purple_select.png */,
+			);
+			name = "Button PNGs";
 			sourceTree = "<group>";
 		};
 		2A76A09116B9B0660026CD1C /* GameVIew */ = {
@@ -288,6 +320,14 @@
 				2A1CB50D16B866C40012C9EA /* MainStoryboard_iPad.storyboard in Resources */,
 				2A4DDFCE16B87D1400130448 /* NIMGameViewController.xib in Resources */,
 				2A76A09716B9E2D60026CD1C /* NIMGameOverViewController.xib in Resources */,
+				2A21452616BE3FB700F2AB11 /* org_circle.png in Resources */,
+				2A21452716BE3FB700F2AB11 /* blue_circle.png in Resources */,
+				2A21452816BE3FB700F2AB11 /* purple_circle.png in Resources */,
+				2A21452916BE3FB700F2AB11 /* purple_select.png in Resources */,
+				2A21452A16BE3FB700F2AB11 /* blue_select.png in Resources */,
+				2A1DF95116BE476D00173537 /* red_circle.png in Resources */,
+				2A1DF95416BE5B4500173537 /* red_blue_select.png in Resources */,
+				2A1DF95516BE5B4500173537 /* red_purple_select.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

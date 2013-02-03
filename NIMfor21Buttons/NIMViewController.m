@@ -44,13 +44,13 @@
 - (IBAction)playWithNormalAI:(id)sender
 {
     NIMGameViewController *gameViewController = [[NIMGameViewController alloc] init];
-    [self.AISelectionViewController presentViewController:gameViewController animated:NO completion:nil];
+    [self.AISelectionViewController presentViewController:gameViewController animated:YES completion:nil];
 }
 
 - (IBAction)playWithCrazyAI:(id)sender
 {
     NIMGameViewController *gameViewController = [[NIMGameViewController alloc] init];
-    [self.AISelectionViewController presentViewController:gameViewController animated:NO completion:nil];
+    [self.AISelectionViewController presentViewController:gameViewController animated:YES completion:nil];
 }
 
 #pragma mark -
@@ -80,7 +80,7 @@
 - (IBAction)multiplayerGo:(id)sender
 {
     NIMGameViewController *gameViewController = [[NIMGameViewController alloc] init];
-    [self presentViewController:gameViewController animated:NO completion:nil];
+    [self presentViewController:gameViewController animated:YES completion:nil];
     
 }
 
