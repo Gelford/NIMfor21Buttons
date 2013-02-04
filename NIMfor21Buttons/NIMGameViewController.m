@@ -233,15 +233,18 @@
     
     if (self.timeCount == 0)
     {
-        self.positionCurrentSelected = self.positionHaveBeenUsed+1;
+        if (self.positionCurrentSelected == -1)
+        {
+            self.positionCurrentSelected = self.positionHaveBeenUsed+1;
+        }
         [self gameButtonPressed:[self.gameButtonArray objectAtIndex:self.positionCurrentSelected]];
         [self confirmAndGo:nil];
     }
-    if (self.positionHaveBeenUsed == 20)
+    else if (self.positionHaveBeenUsed == 20)
     {
         [self gameOver];
     }
-    if (self.startAITerm)
+    else if (self.startAITerm)
     {
         [self doAITerm];
         self.startAITerm = NO;
