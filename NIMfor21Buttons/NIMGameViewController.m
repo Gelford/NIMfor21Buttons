@@ -25,6 +25,7 @@
 @property (strong, nonatomic) NSTimer *timer;
 @property (assign, nonatomic) NSInteger timeCount;
 @property (assign, nonatomic) BOOL inAnimation;
+@property (assign, nonatomic) BOOL startAITerm;
 // The following array contains NSNumber(Type), which is the position of gameButtonArray
 @property (strong, nonatomic) NSMutableArray *blueGameButtonArray;
 @property (strong, nonatomic) NSMutableArray *purpleGameButtonArray;
@@ -32,6 +33,7 @@
 - (void)initGameButtonArray;
 - (void)changePlayer; // including just start-game settings
 - (void)gameOver; // This is...hmm...Game Over!
+- (void)doAITerm;
 
 // animation methods
 - (void)changePlayerAnimation;
@@ -43,6 +45,7 @@
 @end
 
 @implementation NIMGameViewController
+@synthesize AIEngine;
 
 #pragma mark -
 #pragma mark Public Methods
@@ -55,6 +58,7 @@
     [self.blueGameButtonArray removeAllObjects];
     [self.purpleGameButtonArray removeAllObjects];
     self.timeCount = TIME_LIMIT;
+    [self.timer invalidate];
     
     [self dismissViewControllerAnimated:NO completion:nil];
     [super dismissViewControllerAnimated:NO completion:nil];
@@ -71,6 +75,8 @@
         self.positionCurrentSelected = -1;
         self.currentTerm = -1;
         self.inAnimation = NO;
+        self.startAITerm = NO;
+        self.AITerm = arc4random()%2;
         
         self.blueGameButtonArray = [[NSMutableArray alloc] init];
         self.purpleGameButtonArray = [[NSMutableArray alloc] init];
@@ -105,25 +111,70 @@
     }
 }
 
-- (void)changePlayer
+- (NSInteger)reverseTerm:(NSInteger)term
 {
-    // if just start
-    if (self.currentTerm == -1)
+    if (term == BLUE_TERM)
     {
-        self.currentTerm = BLUE_TERM;
-        [self.termLabel setText:@"Blue Term"];
+        return PURPLE_TERM;
     }
     else
     {
-        if (self.currentTerm == BLUE_TERM)
+        return BLUE_TERM;
+    }
+}
+
+- (void)changePlayer
+{
+    // if just start
+    if (self.AIEngine != nil)
+    {
+        if (self.currentTerm == -1)
         {
-            self.currentTerm = PURPLE_TERM;
-            [self.termLabel setText:@"Purple Term"];
+            self.currentTerm = BLUE_TERM;
+            if (self.currentTerm == self.AITerm)
+            {
+                [self.termLabel setText:@"AI Term"];
+                self.startAITerm = YES;
+            }
+            else
+            {
+                [self.termLabel setText:@"Your Term"];
+            }
         }
-        else if (self.currentTerm == PURPLE_TERM)
+        else
+        {
+            if (self.currentTerm == self.AITerm)
+            {
+                self.currentTerm = [self reverseTerm:self.currentTerm];
+                [self.termLabel setText:@"Your Term"];
+            }
+            else
+            {
+                self.currentTerm = self.AITerm;
+                [self.termLabel setText:@"AI Term"];
+                self.startAITerm = YES;
+            }
+        }
+    }
+    else
+    {
+        if (self.currentTerm == -1)
         {
             self.currentTerm = BLUE_TERM;
             [self.termLabel setText:@"Blue Term"];
+        }
+        else
+        {
+            if (self.currentTerm == BLUE_TERM)
+            {
+                self.currentTerm = PURPLE_TERM;
+                [self.termLabel setText:@"Purple Term"];
+            }
+            else if (self.currentTerm == PURPLE_TERM)
+            {
+                self.currentTerm = BLUE_TERM;
+                [self.termLabel setText:@"Blue Term"];
+            }
         }
     }
     
@@ -150,10 +201,18 @@
     [self changePlayerAnimation];
 }
 
+- (void)doAITerm
+{
+    self.positionCurrentSelected = [self.AIEngine selectCircleWith:self.positionHaveBeenUsed];
+    [self gameButtonPressed:[self.gameButtonArray objectAtIndex:self.positionCurrentSelected]];
+    [self confirmAndGo:nil];
+}
+
 - (void)gameOver
 {
     NIMGameOverViewController *gameOverViewController = [[NIMGameOverViewController alloc] init];
     gameOverViewController.delegate = self;
+    gameOverViewController.AITerm = self.AITerm;
     [gameOverViewController createResultMatrixWithBlueArray:self.blueGameButtonArray
                                              andPurpleArray:self.purpleGameButtonArray];
     [gameOverViewController setLoser:self.currentTerm];
@@ -182,12 +241,17 @@
     {
         [self gameOver];
     }
+    if (self.startAITerm)
+    {
+        [self doAITerm];
+        self.startAITerm = NO;
+    }
 }
 
 - (IBAction)animationPart2:(id)sender
 {
     [UIView beginAnimations:nil context:UIGraphicsGetCurrentContext()];
-    [UIView setAnimationDuration:1];
+    [UIView setAnimationDuration:0.6];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     [UIView setAnimationDidStopSelector:@selector(animationDidStop:)];
@@ -201,7 +265,7 @@
     self.inAnimation = YES;
     
     [UIView beginAnimations:nil context:UIGraphicsGetCurrentContext()];
-    [UIView setAnimationDuration:1];
+    [UIView setAnimationDuration:0.6];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
     [UIView setAnimationDidStopSelector:@selector(animationPart2:)];
@@ -211,14 +275,27 @@
 
 - (void)changePlayerAnimation
 {
-    
-    if (self.currentTerm == BLUE_TERM)
+    if (self.AIEngine != nil)
     {
-        [self.infoLabel setText:@"Blue Term"];
+        if (self.currentTerm == self.AITerm)
+        {
+            [self.infoLabel setText:@"AI Term"];
+        }
+        else
+        {
+            [self.infoLabel setText:@"Your Term"];
+        }
     }
-    else if (self.currentTerm == PURPLE_TERM)
+    else
     {
-        [self.infoLabel setText:@"Purple Term"];
+        if (self.currentTerm == BLUE_TERM)
+        {
+            [self.infoLabel setText:@"Blue Term"];
+        }
+        else if (self.currentTerm == PURPLE_TERM)
+        {
+            [self.infoLabel setText:@"Purple Term"];
+        }
     }
     
     [self animationPart1:nil];
@@ -284,7 +361,6 @@
         NSLog(@"You must choose 1-3 buttons to continue!");
         return;
     }
-    
     
     // save player selection
     for (int i = self.positionCurrentSelected; i > self.positionHaveBeenUsed; i--)

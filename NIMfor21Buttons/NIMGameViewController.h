@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NIMAIEngine.h"
 
 @interface NIMGameViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIView *pausePanel;
@@ -16,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *termLabel;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @property (weak, nonatomic) IBOutlet UIButton *gameStartButton;
+@property (strong, nonatomic) NIMAIEngine *AIEngine;
+@property (assign, nonatomic) NSInteger AITerm; // random
+
 
 - (IBAction)pause:(id)sender;
 - (IBAction)backToGame:(id)sender;

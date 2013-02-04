@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) id delegate;
 @property (weak, nonatomic) IBOutlet UILabel *winnerLabel;
+@property (assign, nonatomic) NSInteger AITerm;
 
 - (void)setLoser:(NSInteger)loser;
 - (void)createResultMatrixWithBlueArray:(NSMutableArray *)blueArray

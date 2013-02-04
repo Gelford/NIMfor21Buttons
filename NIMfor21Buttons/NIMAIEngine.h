@@ -10,4 +10,7 @@
 
 @interface NIMAIEngine : NSObject
 
+- (id)initWithAIMode:(NSInteger)mode;
+- (NSInteger)selectCircleWith:(NSInteger)currentHaveSelected; // return 'positionWillBeSelected'
+
 @end

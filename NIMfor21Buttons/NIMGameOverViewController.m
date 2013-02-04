@@ -17,7 +17,7 @@
 @end
 
 @implementation NIMGameOverViewController
-@synthesize delegate;
+@synthesize delegate, AITerm;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,13 +52,27 @@
 
 - (void)setLoser:(NSInteger)loser
 {
-    if (loser == BLUE_LOSE)
+    if (self.AITerm != -1)
     {
-        [self.winnerLabel setText:@"Purple Wins!"];
+        if (loser == self.AITerm)
+        {
+            [self.winnerLabel setText:@"You Win!"];
+        }
+        else
+        {
+            [self.winnerLabel setText:@"AI Wins!"];
+        }
     }
-    else if (loser == PURPLE_LOSE)
+    else
     {
-        [self.winnerLabel setText:@"Blue Wins!"];
+        if (loser == BLUE_LOSE)
+        {
+            [self.winnerLabel setText:@"Purple Wins!"];
+        }
+        else if (loser == PURPLE_LOSE)
+        {
+            [self.winnerLabel setText:@"Blue Wins!"];
+        }
     }
 }
 

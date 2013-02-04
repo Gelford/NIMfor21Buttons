@@ -8,6 +8,11 @@
 
 #import "NIMViewController.h"
 #import "NIMGameViewController.h"
+#import "NIMAIEngine.h"
+
+
+#define NORMAL_AI 0
+#define CRAZY_AI 1
 
 // private definitions
 @interface NIMViewController ()
@@ -43,13 +48,21 @@
 
 - (IBAction)playWithNormalAI:(id)sender
 {
+    // create ai with aimode
+    NIMAIEngine *AIEngine = [[NIMAIEngine alloc] initWithAIMode:NORMAL_AI];
+    // add game vc
     NIMGameViewController *gameViewController = [[NIMGameViewController alloc] init];
+    gameViewController.AIEngine = AIEngine;
     [self.AISelectionViewController presentViewController:gameViewController animated:YES completion:nil];
 }
 
 - (IBAction)playWithCrazyAI:(id)sender
 {
+    // create ai with aimode
+    NIMAIEngine *AIEngine = [[NIMAIEngine alloc] initWithAIMode:CRAZY_AI];
+    // add game vc
     NIMGameViewController *gameViewController = [[NIMGameViewController alloc] init];
+    gameViewController.AIEngine = AIEngine;
     [self.AISelectionViewController presentViewController:gameViewController animated:YES completion:nil];
 }
 
@@ -80,6 +93,8 @@
 - (IBAction)multiplayerGo:(id)sender
 {
     NIMGameViewController *gameViewController = [[NIMGameViewController alloc] init];
+    gameViewController.AIEngine = nil;
+    gameViewController.AITerm = -1;
     [self presentViewController:gameViewController animated:YES completion:nil];
     
 }
