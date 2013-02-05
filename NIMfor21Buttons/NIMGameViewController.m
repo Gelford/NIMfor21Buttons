@@ -26,6 +26,7 @@
 @property (assign, nonatomic) NSInteger timeCount;
 @property (assign, nonatomic) BOOL inAnimation;
 @property (assign, nonatomic) BOOL startAITerm;
+@property (assign, nonatomic) BOOL isPaused;
 // The following array contains NSNumber(Type), which is the position of gameButtonArray
 @property (strong, nonatomic) NSMutableArray *blueGameButtonArray;
 @property (strong, nonatomic) NSMutableArray *purpleGameButtonArray;
@@ -76,6 +77,7 @@
         self.currentTerm = -1;
         self.inAnimation = NO;
         self.startAITerm = NO;
+        self.isPaused = NO;
         self.AITerm = arc4random()%2;
         
         self.blueGameButtonArray = [[NSMutableArray alloc] init];
@@ -321,7 +323,7 @@
 
 - (void) handleTimer: (NSTimer *) timer
 {
-    if (self.inAnimation)
+    if (self.inAnimation || self.isPaused)
     {
         return;
     }
@@ -338,11 +340,13 @@
 
 - (IBAction)pause:(id)sender
 {
+    self.isPaused = YES;
     [self.view addSubview:self.pausePanel];
 }
 
 - (IBAction)backToGame:(id)sender
 {
+    self.isPaused = NO;
     [self.pausePanel removeFromSuperview];
 }
 

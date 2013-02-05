@@ -175,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="peG-Q9-aFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2284" y="-2194"/>
+            <point key="canvasLocation" x="-2776" y="-2366"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eMp-hp-Q8F">
@@ -234,7 +234,7 @@ ENJOY!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHt-Bf-Qlq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2333" y="-3021"/>
+            <point key="canvasLocation" x="-2797" y="-3001"/>
         </scene>
     </scenes>
     <classes>
