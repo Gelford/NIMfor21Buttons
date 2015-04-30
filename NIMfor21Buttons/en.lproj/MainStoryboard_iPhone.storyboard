@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <development version="4600" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,6 +15,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UE-Bd-VFF">
+                                <rect key="frame" x="68" y="283" width="184" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4mT-e0-o4D"/>
                                 </constraints>
@@ -29,6 +32,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZn-Qz-ySI">
+                                <rect key="frame" x="68" y="218" width="184" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="184" id="HKa-ED-mWT"/>
                                     <constraint firstAttribute="height" constant="44" id="TOT-hV-Isc"/>
@@ -46,6 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJd-OF-j5i">
+                                <rect key="frame" x="68" y="350" width="184" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ESr-lp-MqI"/>
                                 </constraints>
@@ -62,6 +67,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="N I M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyR-z7-3ZL">
+                                <rect key="frame" x="58" y="61" width="204" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="BBH-WI-Hi0"/>
                                     <constraint firstAttribute="width" constant="204" id="zPc-cs-utd"/>
@@ -102,6 +108,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" tag="201" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WR-dY-Xqp">
+                                <rect key="frame" x="68" y="221" width="184" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="184" id="XNL-NL-QT1"/>
                                     <constraint firstAttribute="height" constant="44" id="ZFd-Ig-LFZ"/>
@@ -119,6 +126,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="202" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWF-Cb-afd">
+                                <rect key="frame" x="68" y="286" width="184" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="BSP-MI-3GS"/>
                                 </constraints>
@@ -135,6 +143,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="101" contentMode="scaleToFill" restorationIdentifier="backButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohJ-nt-WO0">
+                                <rect key="frame" x="130" y="416" width="60" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="5pz-VN-ewM"/>
                                     <constraint firstAttribute="height" constant="44" id="oIs-e8-gcp"/>
@@ -149,6 +158,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="N I M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJW-ko-YHJ">
+                                <rect key="frame" x="58" y="69" width="204" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="204" id="XU3-MD-mbY"/>
                                     <constraint firstAttribute="height" constant="75" id="eaz-ki-JCB"/>
@@ -186,6 +196,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e66-f7-rmB">
+                                <rect key="frame" x="27" y="101" width="266" height="307"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="266" id="gGd-j2-t46"/>
@@ -197,6 +208,7 @@ ENJOY!</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" tag="102" contentMode="scaleToFill" restorationIdentifier="backButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jb2-dC-BXh">
+                                <rect key="frame" x="88" y="416" width="144" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="eQC-et-vRn"/>
                                     <constraint firstAttribute="width" constant="144" id="rjH-Fm-CWQ"/>
@@ -211,6 +223,7 @@ ENJOY!</string>
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Rules" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woG-yt-kHS">
+                                <rect key="frame" x="58" y="18" width="204" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="204" id="GH2-Sb-1s5"/>
                                     <constraint firstAttribute="height" constant="75" id="qD2-en-pvS"/>
@@ -237,22 +250,6 @@ ENJOY!</string>
             <point key="canvasLocation" x="-2797" y="-3001"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NIMViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NIMViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backToMenu:"/>
-                <relationship kind="action" name="multiplayerGo:"/>
-                <relationship kind="action" name="playWithCrazyAI:"/>
-                <relationship kind="action" name="playWithNormalAI:"/>
-                <relationship kind="action" name="showRulesView:"/>
-                <relationship kind="action" name="singlePlayerGo:"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
