@@ -36,6 +36,7 @@
 		2A76A09016B9AE240026CD1C /* NIMAIEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A76A08F16B9AE240026CD1C /* NIMAIEngine.m */; };
 		2A76A09616B9E2D60026CD1C /* NIMGameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A76A09416B9E2D60026CD1C /* NIMGameOverViewController.m */; };
 		2A76A09716B9E2D60026CD1C /* NIMGameOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A76A09516B9E2D60026CD1C /* NIMGameOverViewController.xib */; };
+		2ADC1BFA1AF7FFA200CC6F4F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ADC1BF91AF7FFA200CC6F4F /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		2A76A09316B9E2D60026CD1C /* NIMGameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIMGameOverViewController.h; sourceTree = "<group>"; };
 		2A76A09416B9E2D60026CD1C /* NIMGameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIMGameOverViewController.m; sourceTree = "<group>"; };
 		2A76A09516B9E2D60026CD1C /* NIMGameOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NIMGameOverViewController.xib; sourceTree = "<group>"; };
+		2ADC1BF91AF7FFA200CC6F4F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				2A1CB50016B866C40012C9EA /* NIMAppDelegate.m */,
 				2A1CB50E16B866C40012C9EA /* NIMViewController.h */,
 				2A1CB50F16B866C40012C9EA /* NIMViewController.m */,
+				2ADC1BF91AF7FFA200CC6F4F /* Images.xcassets */,
 			);
 			path = NIMfor21Buttons;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				2A21452616BE3FB700F2AB11 /* org_circle.png in Resources */,
 				2A21452716BE3FB700F2AB11 /* blue_circle.png in Resources */,
 				2A21452816BE3FB700F2AB11 /* purple_circle.png in Resources */,
+				2ADC1BFA1AF7FFA200CC6F4F /* Images.xcassets in Resources */,
 				2A21452916BE3FB700F2AB11 /* purple_select.png in Resources */,
 				2A21452A16BE3FB700F2AB11 /* blue_select.png in Resources */,
 				2A1DF95116BE476D00173537 /* red_circle.png in Resources */,
@@ -483,6 +487,8 @@
 		2A1CB52916B866C40012C9EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NIMfor21Buttons/NIMfor21Buttons-Prefix.pch";
 				INFOPLIST_FILE = "NIMfor21Buttons/NIMfor21Buttons-Info.plist";
@@ -494,6 +500,8 @@
 		2A1CB52A16B866C40012C9EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NIMfor21Buttons/NIMfor21Buttons-Prefix.pch";
 				INFOPLIST_FILE = "NIMfor21Buttons/NIMfor21Buttons-Info.plist";

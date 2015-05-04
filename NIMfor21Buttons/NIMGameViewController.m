@@ -391,7 +391,7 @@
     self.positionHaveBeenUsed = self.positionCurrentSelected;
     self.positionCurrentSelected = -1;
     
-    [self.countLabel setText:[NSString stringWithFormat:@"%ld/21",(self.positionHaveBeenUsed+1)]];
+    [self.countLabel setText:[NSString stringWithFormat:@"%d/21",(self.positionHaveBeenUsed+1)]];
     
     // Whether game is over
     if (self.positionHaveBeenUsed == 20) // from 0..20, so there are 21 buttons have been pushed
