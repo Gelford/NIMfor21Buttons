@@ -19,7 +19,6 @@
 		2A1CB50A16B866C40012C9EA /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1CB50816B866C40012C9EA /* MainStoryboard_iPhone.storyboard */; };
 		2A1CB50D16B866C40012C9EA /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A1CB50B16B866C40012C9EA /* MainStoryboard_iPad.storyboard */; };
 		2A1CB51016B866C40012C9EA /* NIMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1CB50F16B866C40012C9EA /* NIMViewController.m */; };
-		2A1CB51816B866C40012C9EA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1CB51716B866C40012C9EA /* SenTestingKit.framework */; };
 		2A1CB51916B866C40012C9EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1CB4F016B866C40012C9EA /* UIKit.framework */; };
 		2A1CB51A16B866C40012C9EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1CB4F216B866C40012C9EA /* Foundation.framework */; };
 		2A1CB52216B866C40012C9EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A1CB52016B866C40012C9EA /* InfoPlist.strings */; };
@@ -67,8 +66,7 @@
 		2A1CB50C16B866C40012C9EA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		2A1CB50E16B866C40012C9EA /* NIMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIMViewController.h; sourceTree = "<group>"; };
 		2A1CB50F16B866C40012C9EA /* NIMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIMViewController.m; sourceTree = "<group>"; };
-		2A1CB51616B866C40012C9EA /* NIMfor21ButtonsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NIMfor21ButtonsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A1CB51716B866C40012C9EA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2A1CB51616B866C40012C9EA /* NIMfor21ButtonsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NIMfor21ButtonsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1CB51F16B866C40012C9EA /* NIMfor21ButtonsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NIMfor21ButtonsTests-Info.plist"; sourceTree = "<group>"; };
 		2A1CB52116B866C40012C9EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A1CB52316B866C40012C9EA /* NIMfor21ButtonsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIMfor21ButtonsTests.h; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A1CB51816B866C40012C9EA /* SenTestingKit.framework in Frameworks */,
 				2A1CB51916B866C40012C9EA /* UIKit.framework in Frameworks */,
 				2A1CB51A16B866C40012C9EA /* Foundation.framework in Frameworks */,
 			);
@@ -129,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				2A1CB4ED16B866C40012C9EA /* NIMfor21Buttons.app */,
-				2A1CB51616B866C40012C9EA /* NIMfor21ButtonsTests.octest */,
+				2A1CB51616B866C40012C9EA /* NIMfor21ButtonsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,7 +137,6 @@
 				2A1CB4F016B866C40012C9EA /* UIKit.framework */,
 				2A1CB4F216B866C40012C9EA /* Foundation.framework */,
 				2A1CB4F416B866C40012C9EA /* CoreGraphics.framework */,
-				2A1CB51716B866C40012C9EA /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,8 +272,8 @@
 			);
 			name = NIMfor21ButtonsTests;
 			productName = NIMfor21ButtonsTests;
-			productReference = 2A1CB51616B866C40012C9EA /* NIMfor21ButtonsTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 2A1CB51616B866C40012C9EA /* NIMfor21ButtonsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -286,6 +282,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = NIM;
+				LastTestingUpgradeCheck = 0630;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Xin Gao";
 			};
@@ -512,13 +509,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NIMfor21Buttons/NIMfor21Buttons-Prefix.pch";
 				INFOPLIST_FILE = "NIMfor21ButtonsTests/NIMfor21ButtonsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -529,13 +526,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NIMfor21Buttons/NIMfor21Buttons-Prefix.pch";
 				INFOPLIST_FILE = "NIMfor21ButtonsTests/NIMfor21ButtonsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

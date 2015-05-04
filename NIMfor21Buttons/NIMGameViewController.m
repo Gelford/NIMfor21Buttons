@@ -91,6 +91,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self initGameButtonArray];
+    
+    // Set panel size
+    [self.pausePanel setFrame:CGRectMake(0, 0,
+                                         [[UIScreen mainScreen] applicationFrame].size.width,
+                                         [[UIScreen mainScreen] applicationFrame].size.height+20)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,7 +105,7 @@
 }
 
 #pragma mark -
-#pragma mark Private Method
+#pragma mark Private Methods
 
 - (void)initGameButtonArray
 {
@@ -181,7 +186,7 @@
     }
     
     self.timeCount = TIME_LIMIT;
-    [self.timeLabel setText:[NSString stringWithFormat:@"%ds",self.timeCount]];
+    [self.timeLabel setText:[NSString stringWithFormat:@"%lds",(long)self.timeCount]];
     
     // set buttons
     for (UIButton *aButton in self.gameButtonArray)
@@ -227,7 +232,7 @@
 - (IBAction)animationDidStop:(id)sender
 {
     // reset infoLabe position
-    [self.infoLabel setFrame:CGRectMake(320, 200, 311, 80)];
+    [self.infoLabel setFrame:CGRectMake(320, 53, 250, 44)];
     
     self.infoPanel.hidden = YES;
     
@@ -256,11 +261,11 @@
 - (IBAction)animationPart2:(id)sender
 {
     [UIView beginAnimations:nil context:UIGraphicsGetCurrentContext()];
-    [UIView setAnimationDuration:0.6];
+    [UIView setAnimationDuration:1];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     [UIView setAnimationDidStopSelector:@selector(animationDidStop:)];
-    [self.infoLabel setFrame:CGRectMake(-320, 200, 311, 80)];
+    [self.infoLabel setFrame:CGRectMake(-320, 53, 250, 44)];
     [UIView commitAnimations];
 }
 
@@ -270,11 +275,11 @@
     self.inAnimation = YES;
     
     [UIView beginAnimations:nil context:UIGraphicsGetCurrentContext()];
-    [UIView setAnimationDuration:0.6];
+    [UIView setAnimationDuration:1];
     [UIView setAnimationDelegate:self];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
     [UIView setAnimationDidStopSelector:@selector(animationPart2:)];
-    [self.infoLabel setFrame:CGRectMake(5, 200, 311, 80)];
+    [self.infoLabel setFrame:CGRectMake(50, 53, 250, 44)];
     [UIView commitAnimations];
 }
 
@@ -332,7 +337,7 @@
     {
         [self timesUpAnimation];
     }
-    [self.timeLabel setText:[NSString stringWithFormat:@"%ds",self.timeCount]];
+    [self.timeLabel setText:[NSString stringWithFormat:@"%lds",(long)self.timeCount]];
 }
 
 #pragma mark -
@@ -370,15 +375,15 @@
     }
     
     // save player selection
-    for (int i = self.positionCurrentSelected; i > self.positionHaveBeenUsed; i--)
+    for (NSInteger i = self.positionCurrentSelected; i > self.positionHaveBeenUsed; i--)
     {
         if (self.currentTerm == BLUE_TERM)
         {
-            [self.blueGameButtonArray addObject:[NSNumber numberWithInt:i]];
+            [self.blueGameButtonArray addObject:[NSNumber numberWithLong:i]];
         }
         else if (self.currentTerm == PURPLE_TERM)
         {
-            [self.purpleGameButtonArray addObject:[NSNumber numberWithInt:i]];
+            [self.purpleGameButtonArray addObject:[NSNumber numberWithLong:i]];
         }
     }
     
@@ -386,7 +391,7 @@
     self.positionHaveBeenUsed = self.positionCurrentSelected;
     self.positionCurrentSelected = -1;
     
-    [self.countLabel setText:[NSString stringWithFormat:@"%d/21",(self.positionHaveBeenUsed+1)]];
+    [self.countLabel setText:[NSString stringWithFormat:@"%ld/21",(self.positionHaveBeenUsed+1)]];
     
     // Whether game is over
     if (self.positionHaveBeenUsed == 20) // from 0..20, so there are 21 buttons have been pushed
@@ -434,12 +439,12 @@
         return;
     }
     
-    [theButton setBackgroundImage:[UIImage imageNamed:imageNameString] forState:UIControlStateNormal];
+    [theButton setImage:[UIImage imageNamed:imageNameString] forState:UIControlStateNormal];
     
     self.positionCurrentSelected = [self.gameButtonArray indexOfObject:theButton];
     for (int offset = 1; offset < 4; offset++)
     {
-        int index = self.positionHaveBeenUsed + offset;
+        long index = self.positionHaveBeenUsed + offset;
         if (index >= 21)
         {
             break;
@@ -451,7 +456,7 @@
         {
             NSString *resetImageNameString = [NSString string];
             resetImageNameString = index==20 ? @"red_circle.png" : @"org_circle.png";
-            [aButton setBackgroundImage:[UIImage imageNamed:resetImageNameString] forState:UIControlStateNormal];
+            [aButton setImage:[UIImage imageNamed:resetImageNameString] forState:UIControlStateNormal];
         }
         else
         {
@@ -466,7 +471,7 @@
                     imageNameString = @"red_purple_select.png";
                 }
             }
-            [aButton setBackgroundImage:[UIImage imageNamed:imageNameString] forState:UIControlStateNormal];
+            [aButton setImage:[UIImage imageNamed:imageNameString] forState:UIControlStateNormal];
         }
     }
 }

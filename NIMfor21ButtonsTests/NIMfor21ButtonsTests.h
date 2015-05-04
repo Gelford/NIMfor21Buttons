@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Xin Gao. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface NIMfor21ButtonsTests : SenTestCase
+@interface NIMfor21ButtonsTests : XCTestCase
 
 @end

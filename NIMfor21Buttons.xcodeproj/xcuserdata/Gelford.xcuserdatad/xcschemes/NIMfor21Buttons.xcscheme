@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A1CB51516B866C40012C9EA"
-               BuildableName = "NIMfor21ButtonsTests.octest"
+               BuildableName = "NIMfor21ButtonsTests.xctest"
                BlueprintName = "NIMfor21ButtonsTests"
                ReferencedContainer = "container:NIMfor21Buttons.xcodeproj">
             </BuildableReference>
@@ -58,7 +58,8 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A1CB4EC16B866C40012C9EA"
@@ -76,7 +77,8 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A1CB4EC16B866C40012C9EA"
